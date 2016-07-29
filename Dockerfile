@@ -23,6 +23,7 @@ RUN git clone git://github.com/ecerami/samtools_primer.git $COURSEDIR/samtools_p
 # RUN ls $COURSEDIR/bcftools && ls $COURSEDIR/samtools_primer
 
 # Hopefully that's all pre-requisites in place
-VOLUME $SIAB_HOME
+RUN chown -R guest.guest $COURSEDIR
+VOLUME $COURSEDIR
 ENTRYPOINT ["/scripts/launchsiab.sh"]
 CMD ["/bin/bash"]
