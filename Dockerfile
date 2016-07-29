@@ -4,6 +4,10 @@ MAINTAINER Mark Fernandes <mark.fernandes@ifr.ac.uk>
 # Docker environment for Ethan Cermi's Samtools primer course
 #
 USER root 
+ENV   SIAB_USER=guest \
+  SIAB_GROUP=guest \
+  SIAB_PASSWORD=ngsintro \
+  SIAB_HOME=/home/$SIAB_USER 
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
 # zlib-devel
 RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && ls -alFs $SIAB_HOME
