@@ -9,6 +9,7 @@ RUN git clone --branch-develop git//github/samtools/bcftools.git
 RUN cd bcftools && make && mv bcftool /usr/bin/bcftool
 RUN cd $SIAB_HOME && git https://github.com/ecerami/samtools_primer.git
 
+# Hopefully that's all pre-requisites in place
 VOLUME $SIAB_HOME
 ENTRYPOINT ["/scripts/launchsiab.sh"]
 CMD ["/bin/bash"]
