@@ -9,7 +9,7 @@ ENV   SIAB_USER=guest \
   SIAB_PASSWORD=ngsintro \
   SIAB_HOME=/home/$SIAB_USER 
 ENV COURSEDIR=/home/guest
-VOLUME $COURSEDIR
+# VOLUME $COURSEDIR
 
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
 # zlib-devel
