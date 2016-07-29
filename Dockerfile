@@ -10,10 +10,10 @@ ENV   SIAB_USER=guest \
   SIAB_HOME=/home/$SIAB_USER 
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
 # zlib-devel
-RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && ls -alFs $SIAB_HOME
-RUN cd $SIAB_HOME/bcftools   && git clone --branch=develop git://github.com/samtools/bcftools.git ./
+RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && pwd && ls -alFs $SIAB_HOME
+RUN git clone --branch=develop git://github.com/samtools/bcftools.git $SIAB_HOME/bcftools
 # RUN cd bcftools-develop && make && mv bcftool /usr/bin/bcftool
- RUN cd $SIAB_HOME/samtools_primer  && git clone git://github.com/ecerami/samtools_primer.git ./
+ RUN git clone git://github.com/ecerami/samtools_primer.git $SIAB_HOME/samtools_primer
 
 # Hopefully that's all pre-requisites in place
 VOLUME $SIAB_HOME
