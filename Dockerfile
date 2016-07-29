@@ -12,7 +12,7 @@ ENV COURSEDIR=/home/guest
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
 # zlib-devel
 #RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && pwd && ls -alFs $SIAB_HOME
-RUN cd $ COURSEDIR && mkdir $COURSEDIR/bcftools  $COURSEDIR/samtools_primer && pwd && ls -alFs $COURSEDIR
+RUN cd $COURSEDIR && mkdir $COURSEDIR/bcftools  $COURSEDIR/samtools_primer && pwd && ls -alFs $COURSEDIR
 #RUN git clone --branch=develop git://github.com/samtools/bcftools.git $SIAB_HOME/Sbcftools
 RUN git clone --branch=develop git://github.com/samtools/bcftools.git $COURSEDIR/bcftools
 # RUN cd bcftools-develop && make && mv bcftool /usr/bin/bcftool
