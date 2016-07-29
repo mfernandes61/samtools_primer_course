@@ -1,4 +1,4 @@
-FROM umfernandes61/BPPC
+FROM foodresearch/bppc
 MAINTAINER Mark Fernandes <mark.fernandes@ifr.ac.uk>
 #
 # Docker environment for Ethan Cermi's Samtools primer course
