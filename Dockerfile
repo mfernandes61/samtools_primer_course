@@ -14,6 +14,7 @@ RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && pwd && ls -alFs $SI
 RUN git clone --branch=develop git://github.com/samtools/bcftools.git $SIAB_HOME/bcftools
 # RUN cd bcftools-develop && make && mv bcftool /usr/bin/bcftool
  RUN git clone git://github.com/ecerami/samtools_primer.git $SIAB_HOME/samtools_primer
+ RUN ls $SIAB_HOME/bcftools && ls $SIAB_HOME/samtools_primer
 
 # Hopefully that's all pre-requisites in place
 VOLUME $SIAB_HOME
