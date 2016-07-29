@@ -20,7 +20,7 @@ RUN git clone --branch=develop git://github.com/samtools/bcftools.git $COURSEDIR
 RUN git clone git://github.com/ecerami/samtools_primer.git $COURSEDIR/samtools_primer
 
 # RUN ls $SIAB_HOME/bcftools && ls $SIAB_HOME/samtools_primer
-RUN ls $COURSEDIR/bcftools && ls $COURSEDIR/samtools_primer
+# RUN ls $COURSEDIR/bcftools && ls $COURSEDIR/samtools_primer
 
 # Hopefully that's all pre-requisites in place
 VOLUME $SIAB_HOME
