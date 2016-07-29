@@ -9,6 +9,8 @@ ENV   SIAB_USER=guest \
   SIAB_PASSWORD=ngsintro \
   SIAB_HOME=/home/$SIAB_USER 
 ENV COURSEDIR=/home/guest
+VOLUME $COURSEDIR
+
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
 # zlib-devel
 #RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && pwd && ls -alFs $SIAB_HOME
@@ -24,6 +26,6 @@ RUN git clone git://github.com/ecerami/samtools_primer.git $COURSEDIR/samtools_p
 
 # Hopefully that's all pre-requisites in place
 RUN chown -R guest.guest $COURSEDIR
-VOLUME $COURSEDIR
+
 ENTRYPOINT ["/scripts/launchsiab.sh"]
 CMD ["/bin/bash"]
