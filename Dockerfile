@@ -17,10 +17,10 @@ WORKDIR /home/guest
 #RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && pwd && ls -alFs $SIAB_HOME
 RUN cd $COURSEDIR && mkdir $COURSEDIR/bcftools  $COURSEDIR/samtools_primer && pwd && ls -alFs $COURSEDIR
 #RUN git clone --branch=develop git://github.com/samtools/bcftools.git $SIAB_HOME/Sbcftools
-RUN git clone --branch=develop git://github.com/samtools/bcftools.git
+RUN git clone https://github.com/samtools/bcftools.git
 # RUN cd bcftools-develop && make && mv bcftool /usr/bin/bcftool
 #RUN git clone git://github.com/ecerami/samtools_primer.git $SIAB_HOME/samtools_primer
-RUN git clone git://github.com/ecerami/samtools_primer.git 
+RUN git clone https://github.com/ecerami/samtools_primer.git 
 
 # RUN ls $SIAB_HOME/bcftools && ls $SIAB_HOME/samtools_primer
 # RUN ls $COURSEDIR/bcftools && ls $COURSEDIR/samtools_primer
