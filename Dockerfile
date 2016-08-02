@@ -9,26 +9,20 @@ ENV   SIAB_USER=guest \
   SIAB_PASSWORD=ngsintro \
   SIAB_HOME=/home/$SIAB_USER 
 ENV COURSEDIR=/home/guest
-# VOLUME $COURSEDIR
+# NB /home and below are a VOLUME in bppc Dockerfile
 
 COPY welcome.txt /etc/motd
 RUN mkdir /tools /course_material
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
-# zlib-devel
-# WORKDIR /home/guest
-#RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && pwd && ls -alFs $SIAB_HOME
+# zlib1g-dev
 
-#RUN git clone --branch=develop git://github.com/samtools/bcftools.git $SIAB_HOME/Sbcftools
+# instal htslib & bcftools from source (do for Samtools also?)
 RUN cd /tools && git clone https://github.com/samtools/htslib.git  && git clone https://github.com/samtools/bcftools.git  
+RUN git clone https://github.com/samtools/samtools.git
 RUN mkdir /usr/local/bin/plugins
 RUN cd /tools/htslib && make install
-RUN cd /tools/bcftools && make install
+# RUN cd /tools/bcftools && make install
 RUN cd /course_material && git clone https://github.com/ecerami/samtools_primer.git ./
-# RUN cd bcftools-develop && make && mv bcftool /usr/bin/bcftool
-#RUN git clone git://github.com/ecerami/samtools_primer.git $SIAB_HOME/samtools_primer
-RUN ls -alFsR $COURSEDIR
-# RUN ls $SIAB_HOME/bcftools && ls $SIAB_HOME/samtools_primer
-# RUN ls $COURSEDIR/bcftools && ls $COURSEDIR/samtools_primer
 
 # Hopefully that's all pre-requisites in place
 # RUN chown -R guest.guest $COURSEDIR
