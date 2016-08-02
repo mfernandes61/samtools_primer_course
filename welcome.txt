@@ -1,0 +1,8 @@
+Hi! 
+This is a Docker container running a Shellinabox environment
+to provide the tools and data files for E. Cerami's SAMtools primer tutorial course.
+The materials are in the directory /course_material. The requiste software is pre-installed for you (SAMtools etc).
+You should connect /home/guest to a local disk (via Kitematic settings) and do any writing of files there
+e.g. copying data from the coure materials directory using the linux cp command (see man cp if unsure).
+Happy learning!
+Mark Fernandes IFR
