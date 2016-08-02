@@ -11,6 +11,7 @@ ENV   SIAB_USER=guest \
 ENV COURSEDIR=/home/guest
 # VOLUME $COURSEDIR
 
+COPY welcome.txt /etc/motd
 RUN mkdir /tools /course_material
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
 # zlib-devel
