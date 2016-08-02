@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y samtools bowtie2 git
 
 #RUN git clone --branch=develop git://github.com/samtools/bcftools.git $SIAB_HOME/Sbcftools
 RUN cd /tools && git clone https://github.com/samtools/bcftools.git ./ 
-RUN cd /course_material git clone https://github.com/ecerami/samtools_primer.git ./ 
+RUN cd /course_material && git clone https://github.com/ecerami/samtools_primer.git ./
 # RUN cd bcftools-develop && make && mv bcftool /usr/bin/bcftool
 #RUN git clone git://github.com/ecerami/samtools_primer.git $SIAB_HOME/samtools_primer
 RUN ls -alFsR $COURSEDIR
