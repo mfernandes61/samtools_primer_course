@@ -11,13 +11,15 @@ ENV   SIAB_USER=guest \
 ENV COURSEDIR=/home/guest
 # VOLUME $COURSEDIR
 
+RUN mkdir /tools /course_material
 RUN apt-get update && apt-get install -y samtools bowtie2 git 
 # zlib-devel
 # WORKDIR /home/guest
 #RUN mkdir $SIAB_HOME/bcftools  $SIAB_HOME/samtools_primer && pwd && ls -alFs $SIAB_HOME
 
 #RUN git clone --branch=develop git://github.com/samtools/bcftools.git $SIAB_HOME/Sbcftools
-RUN cd /home/guest && git clone https://github.com/samtools/bcftools.git ./ &&  git clone https://github.com/ecerami/samtools_primer.git ./ 
+RUN cd /tools && git clone https://github.com/samtools/bcftools.git ./ 
+RUN cd /course_material git clone https://github.com/ecerami/samtools_primer.git ./ 
 # RUN cd bcftools-develop && make && mv bcftool /usr/bin/bcftool
 #RUN git clone git://github.com/ecerami/samtools_primer.git $SIAB_HOME/samtools_primer
 RUN ls -alFsR $COURSEDIR
