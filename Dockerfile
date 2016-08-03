@@ -13,7 +13,7 @@ ENV COURSEDIR=/home/guest
 
 COPY welcome.txt /etc/motd
 RUN mkdir /tools /course_material
-RUN apt-get update && apt-get install -y samtools bowtie2 git 
+RUN apt-get update && apt-get install -y samtools bowtie2 git lighttpd
 # zlib1g-dev
 
 # instal htslib & bcftools from source (do for Samtools also?)
