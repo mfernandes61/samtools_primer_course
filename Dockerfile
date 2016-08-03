@@ -27,5 +27,5 @@ RUN cd /course_material && git clone https://github.com/ecerami/samtools_primer.
 # Hopefully that's all pre-requisites in place
 # RUN chown -R guest.guest $COURSEDIR
 
-ENTRYPOINT ["/scripts/lauchsiab.sh"]
+ENTRYPOINT ["/scripts/launchsiab.sh"]
 CMD ["/bin/bash"]
