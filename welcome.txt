@@ -5,8 +5,9 @@ to provide the tools and data files for E. Cerami's SAMtools primer tutorial cou
 
 The materials are in the directory /course_material. The requisite software is pre-installed for you (SAMtools etc).
 You should connect /home to a local directory (via Kitematic Volume settings on bottom left corner of Kitematic 
-window) and do any writing of files there including copying data & materials from the coure materials directory 
-using the linux cp command e.g. cp -R /course_material/* /home (see man cp if unsure). 
+window. Note that after you do this you will have to stop and start the container using the big buttons at the top
+of the Kitematic window) and do any writing of files there including copying data & materials from the coure materials 
+directory using the linux cp command e.g. cp -R /course_material/* /home (see man cp if unsure). 
 
 Note that there are 'textbook' answer files in this directory so you may like to do something like adding your 
 initials to any you create e.g. MFsim_reads_aligned.sam
