@@ -12,6 +12,7 @@ ENV COURSEDIR=/home/guest
 # NB /home and below are a VOLUME in bppc Dockerfile
 
 COPY welcome.txt /etc/motd
+COPY learning_env.sh /scripts/learning_env.sh
 RUN mkdir /tools /course_material
 RUN apt-get update && apt-get install -y samtools bowtie2 git lighttpd
 # zlib1g-dev
@@ -23,11 +24,11 @@ RUN mkdir /usr/local/bin/plugins
 RUN cd /tools/htslib && make install
 # RUN cd /tools/bcftools && make install
 RUN cd /course_material && git clone https://github.com/ecerami/samtools_primer.git ./
-RUN /etc/init.d/lighttpd -D start
+RUN chmod +x /scripts/learning_env.sh
 EXPOSE 80
 
 # Hopefully that's all pre-requisites in place
 # RUN chown -R guest.guest $COURSEDIR
 
-ENTRYPOINT ["/scripts/launchsiab.sh"]
+ENTRYPOINT ["/scripts/learning_env.sh"]
 CMD ["/bin/bash"]
