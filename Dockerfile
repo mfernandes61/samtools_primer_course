@@ -23,7 +23,7 @@ RUN mkdir /usr/local/bin/plugins
 RUN cd /tools/htslib && make install
 # RUN cd /tools/bcftools && make install
 RUN cd /course_material && git clone https://github.com/ecerami/samtools_primer.git ./
-RUN /etc/init.d/lighttpd force-reload
+RUN /etc/init.d/lighttpd start
 EXPOSE 80
 
 # Hopefully that's all pre-requisites in place
